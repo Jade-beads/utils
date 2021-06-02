@@ -9,8 +9,8 @@
 </head>
 
 <body>
-
   <script src="./src/call.js"></script>
+  <script src="./src/bind.js"></script>
   <script>
     function add(a, b) {
       return a + b + this.c;
@@ -19,7 +19,8 @@
       c: 20
     }
     window.c = 10
-    console.log(call(add, null, 1, 2));
+    let fn = bind(add, obj, 1, 2)
+    console.log(fn(3, 4));
   </script>
 </body>
 
